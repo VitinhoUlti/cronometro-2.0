@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crônometro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="horario">
+      <p><label for="ihoras">Horas:</label>
+    <input type="number" name="horas" id="ihoras" max="60" min="0"></p>
+    <p><label for="inum">Minutos:</label>
+    <input type="number" name="num" id="inum" max="60" min="0"></p>
+    <p><label for="isegundos">Segundos:</label>
+    <input type="number" name="segundos" id="isegundos" max="60" min="0"></p>
+
+    <p><input type="button" value="Entrar" onclick="entrar()"></p>  
+    </div>
+
+    <div id="crono"></div>
+    
+    <script src="js/index.js"></script>
+</body>
+</html>

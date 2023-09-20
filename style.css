@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*{
+    overflow: hidden;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    background-color: rgb(58, 58, 250);
+    justify-content: center;
+    align-items: center;
+}
+#horario, #crono{
+    display: grid;
+    background-color: white;
+    border: 1px solid black;
+    width: 40vw;
+    height: 40vh;
+    font-size: 3vh;
+    justify-content: center;
+    align-items: center;
+}
+#crono{
+    display: none;
+}
