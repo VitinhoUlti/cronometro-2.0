@@ -38,8 +38,14 @@ function entrar() {
         console.log(minutos)
         console.log(segundos)
     }
-    if(horas>=60, minutos>=60, segundos>=60){
-        alert("[Erro, Minuto Invalido]")
+    if(horas>=60){
+        horas=60
+    }
+    if(minutos>=60){
+        minutos=60
+    }
+    if(segundos>=60){
+        segundos=60
     }
 
     const horario1 = document.getElementById("horash");
