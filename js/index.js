@@ -1,6 +1,10 @@
 function entrar() {
   const input = document.getElementById("horario");
   const crono = document.getElementById("crono");
+  const voltar = document.getElementById("voltar");
+  const recomecar = document.getElementById("recomecar");
+  const parar = document.getElementById("parar");
+  const continuar = document.getElementById("continuar");
 
   const input1 = document.getElementById("ihoras");
   let horas = Number(input1.value);
@@ -10,6 +14,8 @@ function entrar() {
 
   const input3 = document.getElementById("isegundos");
   let segundos = Number(input3.value);
+
+  let setar = 0
 
   if (horas == "") {
     if (minutos == "") {
@@ -68,7 +74,17 @@ function entrar() {
     horario3.textContent = `${segundos}`;
   }
 
-  const set3 = setInterval(tempo3, 1000);
+  let set3 = setInterval(tempo3, 1000);
+  continuar.addEventListener("click", function continuar1() {
+    parar.style.display = "flex";
+    continuar.style.display = "none";
+    setar = 1;
+    if(setar == 1){
+      set3 = setInterval(tempo3, 1000);
+    } else {
+      clearInterval(set3)
+    }
+  });
 
   function tempo3() {
     segundos -= 1;
@@ -101,8 +117,28 @@ function entrar() {
           horario1.innerText = `${horas}:`;
         }
       } else {
+        setar = 1
         clearInterval(set3);
       }
     }
   }
+  voltar.addEventListener("click", function voltar1() {
+    horas = 0;
+    minutos = 0;
+    segundos = 0;
+    input.style.display = "grid";
+    crono.style.display = "none";
+    setar = 1;
+  });
+  recomecar.addEventListener("click", function recomecar1() {
+    horas = Number(input1.value);
+    minutos = Number(input2.value);
+    segundos = Number(input3.value);
+  });
+  parar.addEventListener("click", function parar1() {
+    parar.style.display = "none";
+    continuar.style.display = "flex";
+    setar = 0
+    clearInterval(set3)
+  });
 }

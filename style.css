@@ -20,7 +20,24 @@ html,body{
     font-size: 3vh;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
-#crono{
+#crono, #timer{
+    display: none;
+}
+#timer{
+    display: flex;
+    flex-direction: row;
+}
+#botao{
+    display: flex;
+    flex-direction: row;
+}
+#botao input{
+    margin: 0vw 1vw;
+    background-color: rgb(27, 27, 248);
+    color: white;
+}
+#continuar{
     display: none;
 }
